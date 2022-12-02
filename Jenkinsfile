@@ -5,13 +5,13 @@ pipeline {
  
             stage ('test') {
                 steps {
-                    sh "mvn clean compile test"
+                    bat "mvn clean compile test"
                 }
             }
 
             stage ('Build application') {
                 steps {
-                    sh "mvn -f pom.xml clean install -Dmaven.test.skip=true"   
+                    bat "mvn -f pom.xml clean install -Dmaven.test.skip=true"   
                 }
             }
   
